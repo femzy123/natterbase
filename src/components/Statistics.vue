@@ -11,7 +11,7 @@
                     <div class="card insurance1">
                         <div class="card-body">
                             <img src="/images/Insurance bought icon.png">
-                            <h1 class="card-text">06</h1>
+                            <h1 class="card-text">{{ allStatistics.totalInsurancesBought }}</h1>
                             <p>Total Insurance Bought</p>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                     <div class="card">
                         <div class="card-body insurance2">
                             <img src="/images/total amount insurance icon.png">
-                            <h1 class="card-text">₦21,400,000</h1>
+                            <h1 class="card-text">₦{{ allStatistics.totalInsuranceAmount }}</h1>
                             <p>Total Amount of Insurance</p>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="card">
                         <div class="card-body insurance3">
                             <img src="/images/Insurance claim icon.png">
-                            <h1 class="card-text">03</h1>
+                            <h1 class="card-text">{{ allStatistics.totalInsuranceClaims }}</h1>
                             <p>Total Insurance Claims</p>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="card insurance4">
                         <div class="card-body">
                             <img src="/images/amount of claims icon.svg">
-                            <h1 class="card-text">₦1,400,000</h1>
+                            <h1 class="card-text">₦{{ allStatistics.totalClaimsAmount }}</h1>
                             <p>Total Amount of Claims</p>
                         </div>
                     </div>
@@ -64,11 +64,11 @@
                                         <th class="font-weight-light" scope="col"></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody v-for="application in allApplications" :key="application.id">
                                     <tr class="font-weight-bold">
                                         <th scope="row">1</th>
-                                        <td>Travel</td>
-                                        <td>₦21,400,000</td>
+                                        <td>{{ application.insuranceType }}</td>
+                                        <td>₦{{ application.amount }}</td>
                                         <td>14 Oct 2019</td>
                                         <td><span class="btn btn-sm status-completed"><img src="/images/Ellipse.svg" > Complete</span></td>
                                         <td><button class="btn btn-action">Make a Claim</button></td>
@@ -87,15 +87,40 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-    name: 'Statistics'
+    name: 'Statistics',
+    data() {
+        return {
+            applications: ""
+        }
+    },
+    methods: {
+        ...mapActions(['fetchApplications']),
+        ...mapActions(['fetchStatistics']),
+        getApplications: function () {
+            this.applications = this.allApplications
+            console.log(this.applications)
+        },
+        formatDate: function(){
+            
+        },
+    },
+    computed: {
+        ...mapGetters(['allApplications']),
+        ...mapGetters(['allStatistics'])
+    },
+    created() {
+        this.fetchApplications(),
+        this.fetchStatistics()
+    }
 }
-</script>
+</script> 
 
 
 <style scoped>

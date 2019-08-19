@@ -32,7 +32,7 @@
 .nav-item {font-size: 15px; margin-right: 2em !important;}
 .navbar { box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06); margin-bottom: 50px}
 /* .navbar-brand {margin-right: 2em !important} */
-.name-icon {background: #00AD8E; color: #fff; padding: 10px 10px; border-radius: 3px; margin-right: 10px;}
+.name-icon {background: #00AD8E; color: #fff; padding: 10px 10px; border-radius: 3px; margin-right: 10px; background-image: url('/images/profile pic..svg')}
 .navbar-text {font-size: 16px; font-weight: bold}
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {font-weight: bold !important}
 

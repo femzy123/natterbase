@@ -22,6 +22,16 @@ const actions = {
           }
         );
 
+        var months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+
+        
+        for(var i = 0; i < response.data.applications.length; i++) {
+          var date = new Date(response.data.applications[i].createdDate)
+          response.data.applications[i].date = date.getDate() + " " + months[date.getMonth()+1] + " " + date.getFullYear()
+        }
+
+        // console.log(response.data.applications)
+
         commit("setApplications", response.data.applications);
         
     },

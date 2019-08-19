@@ -33,32 +33,32 @@
                                     </div>
                                     <div class="form-row mb-3">
                                         <div class="col-3">
-                                            <label for="email">FULL NAME</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label for="fullname">FULL NAME</label>
+                                            <input type="text" class="form-control" id="fullname">
                                         </div>
                                         <div class="col-3">
-                                            <label for="email">USER NAME</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label for="username">USER NAME</label>
+                                            <input type="text" class="form-control" id="username">
                                         </div>
                                         <div class="col-3">
-                                            <label for="email">BIRTH DATE</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label for="birthdate">BIRTH DATE</label>
+                                            <input type="text" class="form-control" id="birthdate">
                                         </div>
                                     </div>
                                     <button class="btn btn-submit">Save Changes</button>
                                     <div class="dropdown-divider mb-4 mt-4"></div>
                                     <div class="form-row mb-3">
                                         <div class="col-3">
-                                            <label for="email">CURRENT PASSWORD</label>
-                                            <input type="password" class="form-control" id="email">
+                                            <label for="currentPassword">CURRENT PASSWORD</label>
+                                            <input type="password" class="form-control" id="currentPassword">
                                         </div>
                                         <div class="col-3">
-                                            <label for="email">NEW PASSWORD</label>
-                                            <input type="password" class="form-control" id="email">
+                                            <label for="newPassword">NEW PASSWORD</label>
+                                            <input type="password" class="form-control" id="newPassword">
                                         </div>
                                         <div class="col-3">
-                                            <label for="email">CONFIRM PASSWORD</label>
-                                            <input type="password" class="form-control" id="email">
+                                            <label for="confirmPassword">CONFIRM PASSWORD</label>
+                                            <input type="password" class="form-control" id="confirmPassword">
                                         </div>
                                     </div>
                                     <button class="btn btn-submit">Save Changes</button>
@@ -85,32 +85,32 @@
                                 <form>
                                     <div class="form-row mb-3">
                                         <div class="col-3">
-                                            <label for="email">CURRENT STATE</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label for="state">CURRENT STATE</label>
+                                            <input type="text" class="form-control" id="state">
                                         </div>
                                     </div>
                                     <div class="form-row mb-3">
                                         <div class="col-3">
-                                            <label for="email">NEW STATE OF RESIDENCE</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label for="sor">NEW STATE OF RESIDENCE</label>
+                                            <input type="text" class="form-control" id="sor">
                                         </div>
                                         <div class="col-3">
-                                            <label for="email">WHAT LGA DO YOU LIVE IN</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label for="lga">WHAT LGA DO YOU LIVE IN</label>
+                                            <input type="text" class="form-control" id="lga">
                                         </div>
                                         <div class="col-3">
-                                            <label for="email">FEDERAL CONSTITUENCIES</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label for="fc">FEDERAL CONSTITUENCIES</label>
+                                            <input type="text" class="form-control" id="fc">
                                         </div>
                                     </div>
                                     <div class="form-row mb-3">
                                         <div class="col-3">
-                                            <label for="email">SENERATORIAL DISTRICT</label>
-                                            <input type="password" class="form-control" id="email">
+                                            <label for="sd">SENERATORIAL DISTRICT</label>
+                                            <input type="text" class="form-control" id="sd">
                                         </div>
                                         <div class="col-3">
-                                            <label for="email">STATE CONSTITUENCIES</label>
-                                            <input type="password" class="form-control" id="email">
+                                            <label for="sc">STATE CONSTITUENCIES</label>
+                                            <input type="text" class="form-control" id="sc">
                                         </div>
                                     </div>
                                     <button class="btn btn-submit">Save Changes</button>

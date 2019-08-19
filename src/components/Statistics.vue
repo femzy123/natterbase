@@ -28,7 +28,7 @@
                 <div class="col-sm">
                     <div class="card">
                         <div class="card-body insurance3">
-                            <img src="/images/Insurance claim icon.png">
+                            <img src="/images/insurance claim icon.png">
                             <h1 class="card-text">{{ allStatistics.totalInsuranceClaims }}</h1>
                             <p>Total Insurance Claims</p>
                         </div>
@@ -64,13 +64,13 @@
                                         <th class="font-weight-light" scope="col"></th>
                                     </tr>
                                 </thead>
-                                <tbody v-for="application in allApplications" :key="application.id">
-                                    <tr class="font-weight-bold">
-                                        <th scope="row">1</th>
+                                <tbody >
+                                    <tr class="font-weight-bold" v-for="(application, index) in allApplications" :key="application.id">
+                                        <th scope="row">{{ index }}</th>
                                         <td>{{ application.insuranceType }}</td>
                                         <td>₦{{ application.amount }}</td>
-                                        <td>14 Oct 2019</td>
-                                        <td><span class="btn btn-sm status-completed"><img src="/images/Ellipse.svg" > Complete</span></td>
+                                        <td>{{application.date}}</td>
+                                        <td><span class="btn btn-sm" v-bind:class="{'status-completed': application.complete, 'status-incomplete': !application.complete}"><img src="/images/Ellipse.svg"> {{ application.complete ? "Complete" : "Incomplete"}}</span></td>
                                         <td><button class="btn btn-action">Make a Claim</button></td>
                                         <td><span class="btn btn-link text-dark" id="dropdownAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</span>
                                             <div class="dropdown-menu" aria-labelledby="dropdownAction">
@@ -95,21 +95,9 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'Statistics',
-    data() {
-        return {
-            applications: ""
-        }
-    },
     methods: {
         ...mapActions(['fetchApplications']),
         ...mapActions(['fetchStatistics']),
-        getApplications: function () {
-            this.applications = this.allApplications
-            console.log(this.applications)
-        },
-        formatDate: function(){
-            
-        },
     },
     computed: {
         ...mapGetters(['allApplications']),
@@ -133,5 +121,6 @@ export default {
 .card-text {font-weight: bold}
 .table-striped tbody tr:nth-of-type(odd) {background: #F8F7F6 !important;}
 .status-completed{font-size: 12px; font-weight: 500; color: #6add0e; background: rgba(106, 221, 14, 0.2); border-radius: 2px; padding: 5px 15px}
+.status-incomplete{font-size: 12px; font-weight: 500; color: #FD5262; background: rgba(253, 82, 98, 0.2); border-radius: 2px; padding: 5px 15px}
 .btn-action {background: #F58634; border-radius: 2px; padding: 5px 25px; color: #fff;}
 </style>
